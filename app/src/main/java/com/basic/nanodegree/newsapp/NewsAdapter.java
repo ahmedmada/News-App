@@ -43,6 +43,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.mType.setText(news.getType());
         holder.mDate.setText(news.getDate());
         holder.mSection.setText(news.getSection());
+        try {
+            holder.mAuth.setText(news.getmAuth());
+        } catch (Exception e){}
         holder.bind(mNewsList.get(position), mListener);
     }
 
@@ -57,6 +60,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         TextView mType;
         TextView mDate;
         TextView mSection;
+        TextView mAuth;
 
         public NewsViewHolder(View v) {
             super(v);
@@ -64,6 +68,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             mType = (TextView) v.findViewById(R.id.news_type);
             mDate = (TextView) v.findViewById(R.id.news_date);
             mSection = (TextView) v.findViewById(R.id.news_section);
+            mAuth = (TextView) v.findViewById(R.id.auth);
         }
 
         public void bind(final News news, final OnItemClickListener listener) {

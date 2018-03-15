@@ -15,9 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -96,7 +94,6 @@ public class MainActivity extends AppCompatActivity
 
 
     @Override
-
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
         mLoadingIndicator.setVisibility(View.VISIBLE);
         mRecyclerView.setVisibility(View.GONE);
@@ -159,6 +156,4 @@ public class MainActivity extends AppCompatActivity
         searchView.setOnQueryTextListener(this);
         return true;
     }
-
-
 }

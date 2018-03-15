@@ -47,7 +47,19 @@ public class QueryUtils {
                 String date = news.getString("webPublicationDate");
                 String section = news.getString("sectionName");
                 String url =  news.getString("webUrl");
-                News n = new News(title, type, date, section, url);
+                String auth;
+                try {
+                    JSONArray ja = news.getJSONArray("tags");
+
+                    JSONObject jo = ja.getJSONObject(0);
+                    auth = jo.getString("webTitle");
+
+                }catch (Exception e){
+                    auth = "";
+                }
+
+
+                News n = new News(title, type, date, section, url,auth);
                 newses.add(n);
             }
         } catch (JSONException e) {

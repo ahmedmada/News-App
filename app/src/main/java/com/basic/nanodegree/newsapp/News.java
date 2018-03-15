@@ -11,16 +11,18 @@ public class News {
     private String mDate;
     private String mSection;
     private String mUrl;
+    private String mAuth;
 
-    public News(String title, String type, String date, String section, String url) {
+    public News(String title, String type, String date, String section, String url,String auth) {
         this.mTitle = title;
         this.mType = type;
         this.mDate = date;
         this.mSection = section;
         this.mUrl = url;
+        this.mAuth = auth;
     }
 
-     public News() {
+    public News() {
 
     }
 
@@ -82,5 +84,13 @@ public class News {
 
     public void setmUrl(String mUrl) {
         this.mUrl = mUrl;
+    }
+
+    public String getmAuth() {
+        return mAuth;
+    }
+
+    public void setmAuth(String mAuth) {
+        this.mAuth = mAuth;
     }
 }
